@@ -1,0 +1,1493 @@
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.221
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.224
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.226
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.227
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:116)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.228
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:123)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.241
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at g1 (White KNIGHT).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:24.353
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:246)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:140)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.720
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.722
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.723
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.723
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:116)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.725
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:123)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.733
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at g1 (White KNIGHT).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:49:39.758
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:246)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:140)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.429
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:38)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.432
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:46)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.433
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:54)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.435
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:116)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:62)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.436
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:123)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:70)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.448
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at g1 (White KNIGHT).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:70)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:78)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:05.482
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:246)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:140)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:151)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.552
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:38)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.555
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:46)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.556
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:54)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.557
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:62)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.558
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:70)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.568
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:78)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:50:37.604
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:151)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.004
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.006
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.007
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.008
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.009
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.020
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:52:46.055
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:42.047
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   Pawn cannot move diagonally to g3 without an enemy piece to capture.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:111)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:42.051
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   Pawn cannot move diagonally to g3 without an enemy piece to capture.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:111)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:51.175
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at e2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:51.176
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at e2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:54.575
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at d2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:54.576
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at d2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:58.064
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at b2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:55:58.065
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at b2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.398
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.400
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.400
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.401
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.401
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.410
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-03 21:56:14.472
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:15.662
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   Invalid pawn trajectory from h2 to g4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:115)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:15.665
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   Invalid pawn trajectory from h2 to g4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:115)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:24.014
+THREAD:    AWT-EventQueue-0
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from g1 to g3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:24.016
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from g1 to g3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:134)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:30.057
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:31.225
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece at g5. Select a valid piece to move.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:97)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:32.422
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:37.354
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:38.702
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:39.736
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:54:40.939
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-11 23:55:30.258
+THREAD:    AWT-EventQueue-0
+CONTEXT:   UI_HANDLED_EXCEPTION
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is Black's turn. You clicked a White piece.
+STACK TRACE:
+    at chess.ui.BoardPanel.handleBoardClick(BoardPanel.java:100)
+    at chess.ui.BoardPanel.access$000(BoardPanel.java:36)
+    at chess.ui.BoardPanel$1.mousePressed(BoardPanel.java:69)
+    at java.awt.Component.processMouseEvent(Component.java:6536)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6304)
+    at java.awt.Container.processEvent(Container.java:2239)
+    at java.awt.Component.dispatchEventImpl(Component.java:4889)
+    at java.awt.Container.dispatchEventImpl(Container.java:2297)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+    at java.awt.Container.dispatchEventImpl(Container.java:2283)
+    at java.awt.Window.dispatchEventImpl(Window.java:2746)
+    at java.awt.Component.dispatchEvent(Component.java:4711)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+    at java.awt.EventQueue$4.run(EventQueue.java:733)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.security.AccessController.doPrivileged(AccessController.java:-2)
+    at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+================================================================================
