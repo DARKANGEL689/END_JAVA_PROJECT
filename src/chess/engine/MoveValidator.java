@@ -137,7 +137,7 @@ public class MoveValidator {
             } else {
                 promotionPiece = createPromotionPiece(movingPiece.getColor(), promotionChoice);
             }
-        } else if (promotionChoice != null && movingPiece.getType() != PieceType.PAWN) {
+        } else if (promotionChoice != null) {
             throw new InvalidPromotionException("Only pawns reaching the final rank can be promoted.");
         }
 
@@ -301,7 +301,7 @@ public class MoveValidator {
                         for (int toCol = 0; toCol < 8; toCol++) {
                             try {
                                 Position endPos = board.getSquare(toRow, toCol).getPosition();
-                                validate(gameState, startPos, endPos, PieceType.QUEEN);
+                                validate(gameState, startPos, endPos, null);
                                 return true;
                             } catch (OwnPieceCaptureException | PathBlockedException exception) {
                             } catch (InvalidCastlingException | InvalidPromotionException exception) {

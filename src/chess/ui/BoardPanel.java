@@ -183,7 +183,7 @@ public class BoardPanel extends JPanel {
             for (int c = 0; c < 8; c++) {
                 try {
                     Position target = new Position(r, c);
-                    validator.validate(gameState, start, target, PieceType.QUEEN);
+                    validator.validate(gameState, start, target, null);
                     legalMovePositions.add(target);
                 } catch (ChessException ignored) {
                 }
