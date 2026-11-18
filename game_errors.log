@@ -1491,3 +1491,303 @@ STACK TRACE:
     at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
     at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
 ================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.918
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.920
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.922
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.923
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.924
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMove(GameController.java:49)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:42:59.933
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-17 23:43:00.008
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:58)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:95)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.749
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.752
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.754
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.754
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.755
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.765
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:108)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:35:33.939
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:108)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.929
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.NoPieceSelectedException
+ERROR CODE: ERR_NO_PIECE_SELECTED
+MESSAGE:   No piece exists at square e4.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:56)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:37)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.931
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.WrongTurnException
+ERROR CODE: ERR_WRONG_TURN
+MESSAGE:   It is White's turn, but e7 has a Black piece.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:61)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:44)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.931
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.OwnPieceCaptureException
+ERROR CODE: ERR_OWN_PIECE_CAPTURE
+MESSAGE:   Cannot capture friendly piece at a2 (White PAWN).
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:78)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:51)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.932
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.IllegalMoveException
+ERROR CODE: ERR_ILLEGAL_MOVE
+MESSAGE:   White KNIGHT cannot move from b1 to b3.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:120)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:58)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.933
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.PathBlockedException
+ERROR CODE: ERR_PATH_BLOCKED
+MESSAGE:   Path to a4 is obstructed by another piece at square a2.
+STACK TRACE:
+    at chess.engine.MoveValidator.validate(MoveValidator.java:127)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMove(GameController.java:52)
+    at chess.TestVerifier.main(TestVerifier.java:65)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:54.941
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.InvalidCastlingException
+ERROR CODE: ERR_INVALID_CASTLING
+MESSAGE:   Cannot castle: square f1 between King and Rook is occupied.
+STACK TRACE:
+    at chess.engine.MoveValidator.validateCastling(MoveValidator.java:201)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:73)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:108)
+    at chess.TestVerifier.main(TestVerifier.java:72)
+================================================================================
+================================================================================
+TIMESTAMP: 2026-11-18 15:38:55.024
+THREAD:    main
+CONTEXT:   MOVE_EXECUTION_RETHROWN
+EXCEPTION: chess.exceptions.KingInCheckException
+ERROR CODE: ERR_KING_IN_CHECK
+MESSAGE:   Move leaves or places Black King in check.
+STACK TRACE:
+    at chess.engine.MoveValidator.verifyKingSafetyAfterMove(MoveValidator.java:250)
+    at chess.engine.MoveValidator.validate(MoveValidator.java:144)
+    at chess.engine.GameRules.executeMove(GameRules.java:36)
+    at chess.engine.GameController.makeMove(GameController.java:61)
+    at chess.engine.GameController.makeMoveFromAlgebraic(GameController.java:108)
+    at chess.TestVerifier.main(TestVerifier.java:138)
+================================================================================

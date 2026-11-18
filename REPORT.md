@@ -74,7 +74,7 @@ The project is structured into six modular packages, following a variant of the 
         v                                                 |
 +-------------------------------------------------------------------------+
 |                            PERSISTENCE & I/O                            |
-|             (chess.io: GameSaver, GameLoader, GameLogger)               |
+|        (chess.io: GameSaver, GameLoader, GameLogger, MatchRecorder)     |
 +-------------------------------------------------------------------------+
 ```
 
@@ -86,7 +86,7 @@ The project is structured into six modular packages, following a variant of the 
 | `chess.model` | Core board state representations, coordinate systems, and game state snapshots | `Board`, `Square`, `Position`, `Move`, `Color`, `GameState` |
 | `chess.pieces` | Polymorphic piece representations, movement vectors, and Unicode glyphs | `Piece` (abstract), `King`, `Queen`, `Rook`, `Bishop`, `Knight`, `Pawn`, `PieceType` |
 | `chess.engine` | Validation pipeline, check/checkmate detection algorithms, and controller logic | `MoveValidator`, `CheckDetector`, `GameRules`, `GameController` |
-| `chess.io` | Game persistence via serialization and file-based audit logging | `GameSaver`, `GameLoader`, `GameLogger` |
+| `chess.io` | Persistence via serialization, continuous move auto-saving, PGN journaling, and audit logging | `GameSaver`, `GameLoader`, `GameLogger`, `MatchRecorder` |
 | `chess.ui` | Graphical Swing interface, custom canvas drawing, and interactive panels | `ChessFrame`, `BoardPanel`, `MoveHistoryPanel`, `StatusBar` |
 | `chess` | Application entry point and automated verification harness | `Main`, `TestVerifier` |
 
@@ -181,6 +181,7 @@ The following table provides the exhaustive mapping of all 14 required exception
 | **2** | Multiple Catch Blocks (Specific to General) | `GameLoader` (`chess.io`) | `loadGame` | Catches specific `FileNotFoundException` before general `IOException`. |
 | **2** | Multiple Catch Blocks (Specific to General) | `GameController` (`chess.engine`) | `makeMoveFromAlgebraic` | Catches specific `InputMismatchException` before general `NoSuchElementException`. |
 | **3** | Multi-Catch (`\|` operator) | `MoveValidator` (`chess.engine`) | `hasAnyLegalMoves` | Groups unrelated exceptions: `catch (OwnPieceCaptureException \| PathBlockedException)` and `catch (InvalidCastlingException \| InvalidPromotionException)`. |
+| **3** | Multi-Catch (`\|` operator) | `GameController` (`chess.engine`) | `makeMove`, `undoMove` | Fault-tolerant auto-save: `catch (IOException \| CorruptedSaveFileException autoSaveException)`. |
 | **3** | Multi-Catch (`\|` operator) | `BoardPanel` (`chess.ui`) | `handleBoardClick` | Handles initial square validation via `catch (NoPieceSelectedException \| WrongTurnException)`. |
 | **4** | `throw` and `throws` keywords | `MoveValidator`, `Position`, `GameRules` | Throughout codebase | Declares checked exceptions on method signatures and triggers custom exceptions using `throw new ...`. |
 | **5** | Custom Checked Exceptions | `chess.exceptions.*` | 13 Checked Classes | Models domain rule failures with structured error codes. |
@@ -189,6 +190,7 @@ The following table provides the exhaustive mapping of all 14 required exception
 | **6** | Exception Chaining (`getCause()`) | `GameLoader` (`chess.io`) | `loadGame` | Catches `ClassNotFoundException` and `IOException` and chains them into `CorruptedSaveFileException(msg, cause)`. |
 | **6** | Exception Chaining (`getCause()`) | `ChessFrame` (`chess.ui`) | `handleLoadGame` | Inspects `exception.getCause()` and displays root-cause class names and messages in UI error dialogs. |
 | **7** | `try-with-resources` (`AutoCloseable`) | `GameLogger` (`chess.io`) | `logStatic`, `logGlobalError` | Custom class implementing `AutoCloseable`. Flushes and closes `PrintWriter` automatically upon exit. |
+| **7** | `try-with-resources` (`AutoCloseable`) | `MatchRecorder` (`chess.io`) | `appendMoveToPgn`, `readMatchLog` | Automates closing for `FileWriter`, `BufferedWriter`, `PrintWriter`, `FileReader`, and `BufferedReader`. |
 | **7** | `try-with-resources` (`AutoCloseable`) | `GameSaver`, `GameLoader` | `saveGame`, `loadGame` | Safely manages `FileOutputStream`, `ObjectOutputStream`, `FileInputStream`, and `ObjectInputStream`. |
 | **7** | `try-with-resources` (`AutoCloseable`) | `GameController` (`chess.engine`) | `makeMoveFromAlgebraic` | Employs `try (Scanner scanner = new Scanner(sanitized))` for deterministic resource cleanup. |
 | **8** | Nested `try-catch` Blocks | `GameLoader` (`chess.io`) | `loadGame` | Outer block manages stream lifecycle; inner nested try blocks isolate `readObject()` and `validateIntegrity()`. |
@@ -293,12 +295,33 @@ STACK TRACE:
 ================================================================================
 ```
 
+### 7.3 Continuous Move-by-Move Auto-Saving & Match Recording (`MatchRecorder`)
+To satisfy advanced tournament recording and fault-tolerant session requirements, the application implements continuous dual auto-saving on every executed turn:
+1. **Binary State Snapshot (`autosave_game.ser`)**:
+   - Immediately after a move is committed and turn switched, `MatchRecorder.autoSaveMove(...)` serializes the active `GameState` (board layout, captured piece lists, clocks, and undo history) to disk.
+   - If the player closes the window unexpectedly or experiences a power outage, the game state is 100% preserved.
+   - On application startup, `ChessFrame` detects existing auto-saves and offers to resume seamlessly via a modal prompt, or via the **Resume Auto-Save** toolbar button.
+2. **Live Tournament PGN Journal (`match_history.pgn`)**:
+   - Concurrently, every move is appended to a standard Portable Game Notation (`.pgn`) text file formatted with official event tags (Event, Site, Date, Time, Players, Result) and move numbers (`1. e4 e5 2. Nf3 ...`).
+   - Concluded games append official termination scores (`1-0`, `0-1`, `1/2-1/2`).
+   - Players can view the live PGN log anytime by clicking the **Match Log (PGN)** toolbar button.
+3. **Resilient Fault-Tolerant I/O Handling**:
+   - Auto-saving is decoupled from move execution within a `try-catch` block:
+     ```java
+     try {
+         MatchRecorder.autoSaveMove(currentState, executedMove);
+     } catch (IOException | CorruptedSaveFileException autoSaveException) {
+         GameLogger.logStatic("AUTOSAVE_ON_MOVE_FAILED", autoSaveException);
+     }
+     ```
+   - If disk writes fail (e.g. read-only filesystem or I/O failure), the error is logged to `game_errors.log`, but the in-memory chess game continues without interruption or crashing.
+
 ---
 
 ## 8. USER INTERFACE & HUMAN-COMPUTER INTERACTION
 
 The UI is developed in Swing and comprises:
-1. **`ChessFrame`**: The top-level `JFrame` hosting menus, control toolbars (New Game, Undo Move, Save Game, Load Game), manual text move inputs, and the master layout.
+1. **`ChessFrame`**: The top-level `JFrame` hosting menus, control toolbars (New Game, Undo Move, Resume Auto-Save, Match Log (PGN), Save Game, Load Game), manual text move inputs, and the master layout.
 2. **`BoardPanel`**: Custom `JPanel` rendering the 8x8 checkerboard:
    - Alternating wood colors: Light `#F0D9B5`, Dark `#B58863`.
    - Selected piece: Translucent yellow highlight.

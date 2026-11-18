@@ -4,7 +4,9 @@ import chess.exceptions.ChessException;
 import chess.exceptions.CorruptedSaveFileException;
 import chess.exceptions.InvalidMoveFormatException;
 import chess.io.GameLoader;
+import chess.io.GameLogger;
 import chess.io.GameSaver;
+import chess.io.MatchRecorder;
 import chess.model.Color;
 import chess.model.GameState;
 import chess.model.Move;
@@ -43,6 +45,7 @@ public class GameController {
     public void newGame() {
         stateHistory.clear();
         currentState = new GameState();
+        MatchRecorder.clearAutoSave();
     }
 
     public Move makeMove(Position start, Position end) throws ChessException {
@@ -57,6 +60,16 @@ public class GameController {
         GameState previousSnapshot = currentState.copy();
         Move executedMove = gameRules.executeMove(currentState, start, end, promotion);
         stateHistory.push(previousSnapshot);
+
+        try {
+            MatchRecorder.autoSaveMove(currentState, executedMove);
+            if (currentState.isGameOver()) {
+                MatchRecorder.recordGameConclusion(currentState, currentState.getGameResult());
+            }
+        } catch (IOException | CorruptedSaveFileException autoSaveException) {
+            GameLogger.logStatic("AUTOSAVE_ON_MOVE_FAILED", autoSaveException);
+        }
+
         return executedMove;
     }
 
@@ -100,6 +113,17 @@ public class GameController {
             throw new IllegalStateException("Cannot undo move: no previous moves recorded in history.");
         }
         currentState = stateHistory.pop();
+
+        try {
+            if (!stateHistory.isEmpty() && !currentState.getMoveHistory().isEmpty()) {
+                Move lastMove = currentState.getMoveHistory().get(currentState.getMoveHistory().size() - 1);
+                MatchRecorder.autoSaveMove(currentState, lastMove);
+            } else {
+                MatchRecorder.clearAutoSave();
+            }
+        } catch (IOException | CorruptedSaveFileException exception) {
+            GameLogger.logStatic("AUTOSAVE_UNDO_SYNC_FAILED", exception);
+        }
     }
 
     public void saveGame(File targetFile) throws CorruptedSaveFileException, IOException {
@@ -113,6 +137,21 @@ public class GameController {
         gameRules.updateGameStateStatus(currentState);
     }
 
+    public boolean hasAutoSave() {
+        return MatchRecorder.hasAutoSave();
+    }
+
+    public void loadAutoSave() throws CorruptedSaveFileException, FileNotFoundException {
+        GameState loadedState = MatchRecorder.loadAutoSave();
+        stateHistory.clear();
+        currentState = loadedState;
+        gameRules.updateGameStateStatus(currentState);
+    }
+
+    public String getMatchLog() throws IOException {
+        return MatchRecorder.readMatchLog();
+    }
+
     public boolean tickTimer() {
         if (currentState.isGameOver()) {
             return false;
@@ -124,6 +163,7 @@ public class GameController {
             if (remaining <= 0) {
                 currentState.setGameOver(true);
                 currentState.setGameResult("White ran out of time! Black wins.");
+                MatchRecorder.recordGameConclusion(currentState, currentState.getGameResult());
                 return true;
             }
         } else {
@@ -132,6 +172,7 @@ public class GameController {
             if (remaining <= 0) {
                 currentState.setGameOver(true);
                 currentState.setGameResult("Black ran out of time! White wins.");
+                MatchRecorder.recordGameConclusion(currentState, currentState.getGameResult());
                 return true;
             }
         }

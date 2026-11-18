@@ -24,7 +24,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -76,18 +79,39 @@ public class ChessFrame extends JFrame {
 
         updateUIState();
         pack();
-        setMinimumSize(new Dimension(860, 680));
+        setMinimumSize(new Dimension(940, 700));
         setLocationRelativeTo(null);
+
+        SwingUtilities.invokeLater(() -> {
+            if (controller.hasAutoSave()) {
+                int option = JOptionPane.showConfirmDialog(
+                        this,
+                        "An auto-saved game from a previous session was detected.\nWould you like to resume your game?",
+                        "Resume Auto-Saved Game",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE
+                );
+                if (option == JOptionPane.YES_OPTION) {
+                    handleResumeAutoSave();
+                }
+            }
+        });
     }
 
     private JPanel createToolBar() {
-        JPanel toolbar = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 6));
+        JPanel toolbar = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 6));
 
         JButton newGameButton = new JButton("New Game");
         newGameButton.addActionListener(event -> handleNewGame());
 
         JButton undoButton = new JButton("Undo Move");
         undoButton.addActionListener(event -> handleUndoMove());
+
+        JButton resumeAutoSaveButton = new JButton("Resume Auto-Save");
+        resumeAutoSaveButton.addActionListener(event -> handleResumeAutoSave());
+
+        JButton matchLogButton = new JButton("Match Log (PGN)");
+        matchLogButton.addActionListener(event -> handleViewMatchLog());
 
         JButton saveButton = new JButton("Save Game");
         saveButton.addActionListener(event -> handleSaveGame());
@@ -97,6 +121,8 @@ public class ChessFrame extends JFrame {
 
         toolbar.add(newGameButton);
         toolbar.add(undoButton);
+        toolbar.add(resumeAutoSaveButton);
+        toolbar.add(matchLogButton);
         toolbar.add(saveButton);
         toolbar.add(loadButton);
 
@@ -127,7 +153,7 @@ public class ChessFrame extends JFrame {
 
     public void onMoveCompleted() {
         updateUIState();
-        statusBar.showNormalMessage("Move accepted.");
+        statusBar.showNormalMessage("Move accepted (Auto-saved).");
     }
 
     public void updateUIState() {
@@ -193,11 +219,54 @@ public class ChessFrame extends JFrame {
         try {
             controller.undoMove();
             updateUIState();
-            statusBar.showNormalMessage("Previous move was undone.");
+            statusBar.showNormalMessage("Previous move was undone (Auto-save synchronized).");
         } catch (IllegalStateException exception) {
             GameLogger.logStatic("UNDO_OPERATION_FAILED", exception);
             statusBar.showErrorMessage("ERR_ILLEGAL_STATE", exception.getMessage());
             JOptionPane.showMessageDialog(this, exception.getMessage(), "Undo Unavailable", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private void handleResumeAutoSave() {
+        try {
+            controller.loadAutoSave();
+            updateUIState();
+            statusBar.showNormalMessage("Auto-saved game successfully resumed.");
+            JOptionPane.showMessageDialog(this, "Resumed auto-saved game successfully!", "Auto-Save Restored", JOptionPane.INFORMATION_MESSAGE);
+        } catch (FileNotFoundException exception) {
+            GameLogger.logStatic("RESUME_AUTOSAVE_NOT_FOUND", exception);
+            statusBar.showErrorMessage("ERR_FILE_NOT_FOUND", "No auto-saved game file found.");
+            JOptionPane.showMessageDialog(this, "No auto-saved game was found on disk.", "No Auto-Save", JOptionPane.INFORMATION_MESSAGE);
+        } catch (CorruptedSaveFileException exception) {
+            GameLogger.logStatic("RESUME_AUTOSAVE_CORRUPTED", exception);
+            String detail = exception.getMessage();
+            if (exception.getCause() != null) {
+                detail += "\nRoot Cause: " + exception.getCause().getClass().getSimpleName() + " - " + exception.getCause().getMessage();
+            }
+            statusBar.showErrorMessage(exception.getErrorCode(), exception.getMessage());
+            JOptionPane.showMessageDialog(this, "Auto-save file is corrupted:\n" + detail, "Corrupted Auto-Save", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception exception) {
+            GameLogger.logStatic("RESUME_AUTOSAVE_UNEXPECTED", exception);
+            statusBar.showErrorMessage("ERR_UNEXPECTED", exception.getMessage());
+            JOptionPane.showMessageDialog(this, "Unexpected error resuming auto-save: " + exception.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void handleViewMatchLog() {
+        try {
+            String pgnLog = controller.getMatchLog();
+            JTextArea textArea = new JTextArea(pgnLog, 16, 44);
+            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+            textArea.setEditable(false);
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            JOptionPane.showMessageDialog(this, scrollPane, "Live Match Journal (PGN)", JOptionPane.PLAIN_MESSAGE);
+        } catch (FileNotFoundException exception) {
+            statusBar.showErrorMessage("ERR_FILE_NOT_FOUND", "No match history PGN log recorded yet.");
+            JOptionPane.showMessageDialog(this, "No match history has been recorded yet.", "Match Journal", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException exception) {
+            GameLogger.logStatic("VIEW_MATCH_LOG_IO_ERROR", exception);
+            statusBar.showErrorMessage("ERR_IO", "Failed to read match journal: " + exception.getMessage());
+            JOptionPane.showMessageDialog(this, "Failed to read match journal: " + exception.getMessage(), "I/O Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -263,4 +332,3 @@ public class ChessFrame extends JFrame {
         }
     }
 }
-

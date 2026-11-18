@@ -41,7 +41,8 @@ END-JAVA PROJECT/
         ├── io/
         │   ├── GameLoader.java       # ObjectInputStream loader with integrity checks
         │   ├── GameLogger.java       # AutoCloseable file logger with stack trace dump
-        │   └── GameSaver.java        # ObjectOutputStream serializer with state validation
+        │   ├── GameSaver.java        # ObjectOutputStream serializer with state validation
+        │   └── MatchRecorder.java    # Dual auto-saver (autosave_game.ser & match_history.pgn)
         ├── model/
         │   ├── Board.java            # 8x8 grid model and piece tracker
         │   ├── Color.java            # Player color enumeration (WHITE, BLACK)
@@ -107,14 +108,16 @@ The table below maps all 14 required exception handling concepts to the exact cl
 | 2 | Multiple catch blocks ordered from specific to general | `GameLoader` | `src/chess/io/GameLoader.java` | `loadGame` | Catches specific `FileNotFoundException` before general `IOException`. |
 | 2 | Multiple catch blocks ordered from specific to general | `GameController` | `src/chess/engine/GameController.java` | `makeMoveFromAlgebraic` | Catches specific `InputMismatchException` before general `NoSuchElementException`. |
 | 3 | Multi-catch using the `\|` operator | `MoveValidator` | `src/chess/engine/MoveValidator.java` | `hasAnyLegalMoves` | Catches unrelated exceptions using `(OwnPieceCaptureException \| PathBlockedException)` and `(InvalidCastlingException \| InvalidPromotionException)`. |
+| 3 | Multi-catch using the `\|` operator | `GameController` | `src/chess/engine/GameController.java` | `makeMove`, `undoMove` | Handles auto-save failures non-destructively: `catch (IOException \| CorruptedSaveFileException autoSaveException)`. |
 | 3 | Multi-catch using the `\|` operator | `BoardPanel` | `src/chess/ui/BoardPanel.java` | `handleBoardClick` | Catches `(NoPieceSelectedException \| WrongTurnException)` during initial piece selection. |
 | 4 | `throw` and `throws` keywords | `MoveValidator`, `Position`, `GameController` | `src/chess/engine/MoveValidator.java`, `src/chess/model/Position.java` | Multiple methods | Explicit method `throws` declarations and runtime `throw new ...` invocations when chess rules are violated. |
 | 5 | Custom checked exceptions | `ChessException` and 12 subclasses | `src/chess/exceptions/` | Entire package | Checked exceptions for business domain violations: `IllegalMoveException`, `WrongTurnException`, `PathBlockedException`, etc. |
 | 5 | Custom unchecked exceptions | `ChessRuntimeException` | `src/chess/exceptions/ChessRuntimeException.java` | Board integrity checks | Thrown when unexpected board corruption occurs (e.g. missing King or corrupted matrix indexing). |
 | 6 | Exception chaining using cause constructor and `getCause()` | `Position` | `src/chess/model/Position.java` | `fromAlgebraic` | Catches `NumberFormatException` and wraps it into `InvalidMoveFormatException` passing the original exception as the cause. |
 | 6 | Exception chaining using cause constructor and `getCause()` | `GameLoader` | `src/chess/io/GameLoader.java` | `loadGame` | Catches `ClassNotFoundException` and `IOException`, chaining them into `CorruptedSaveFileException(msg, cause)`. |
-| 6 | Exception chaining using cause constructor and `getCause()` | `ChessFrame` | `src/chess/ui/ChessFrame.java` | `handleLoadGame` | Inspects `exception.getCause()` to display root-cause diagnostics to the user. |
+| 6 | Exception chaining using cause constructor and `getCause()` | `ChessFrame` | `src/chess/ui/ChessFrame.java` | `handleLoadGame`, `handleResumeAutoSave` | Inspects `exception.getCause()` to display root-cause diagnostics to the user. |
 | 7 | `try-with-resources` with `AutoCloseable` | `GameLogger` | `src/chess/io/GameLogger.java` | `logStatic`, `logGlobalError` | Implements `AutoCloseable`. Used with `try (GameLogger logger = new GameLogger())` to auto-flush and auto-close writer streams. |
+| 7 | `try-with-resources` with `AutoCloseable` | `MatchRecorder` | `src/chess/io/MatchRecorder.java` | `appendMoveToPgn`, `readMatchLog` | Automates closing for `FileWriter`, `BufferedWriter`, `PrintWriter`, `FileReader`, and `BufferedReader`. |
 | 7 | `try-with-resources` with `AutoCloseable` | `GameSaver`, `GameLoader` | `src/chess/io/GameSaver.java`, `src/chess/io/GameLoader.java` | `saveGame`, `loadGame` | Automates safe stream closing for `FileOutputStream`, `ObjectOutputStream`, `FileInputStream`, and `ObjectInputStream`. |
 | 7 | `try-with-resources` with `AutoCloseable` | `GameController` | `src/chess/engine/GameController.java` | `makeMoveFromAlgebraic` | Uses `try (Scanner scanner = new Scanner(sanitized))` for safe resource release. |
 | 8 | Nested `try-catch` blocks | `GameLoader` | `src/chess/io/GameLoader.java` | `loadGame` | Outer try-with-resources manages file streams; inner nested try-catch blocks independently validate `readObject()` and `validateIntegrity()`. |
@@ -124,8 +127,8 @@ The table below maps all 14 required exception handling concepts to the exact cl
 | 11 | Built-in: `NumberFormatException` | `Position` | `src/chess/model/Position.java` | `fromAlgebraic` | Caught and handled when rank coordinate cannot be parsed as an integer. |
 | 11 | Built-in: `ArrayIndexOutOfBoundsException` | `Board` | `src/chess/model/Board.java` | `getSquare(int, int)` | Caught when accessing internal grid array and wrapped into `OutOfBoardException`. |
 | 11 | Built-in: `NullPointerException` | `Board`, `Piece` | `src/chess/model/Board.java`, `src/chess/pieces/Piece.java` | Multiple | Explicit guards against null positions, null colors, and null pieces. |
-| 11 | Built-in: `IOException` | `GameSaver`, `GameLoader`, `GameLogger` | `src/chess/io/` | File operations | Caught and wrapped during disk read, write, and append operations. |
-| 11 | Built-in: `FileNotFoundException` | `GameLoader`, `ChessFrame` | `src/chess/io/GameLoader.java`, `src/chess/ui/ChessFrame.java` | `loadGame` | Handled when user attempts to load a non-existent save file. |
+| 11 | Built-in: `IOException` | `GameSaver`, `GameLoader`, `GameLogger`, `MatchRecorder` | `src/chess/io/` | File operations | Caught and wrapped during disk read, write, and append operations. |
+| 11 | Built-in: `FileNotFoundException` | `GameLoader`, `MatchRecorder`, `ChessFrame` | `src/chess/io/`, `src/chess/ui/` | `loadGame`, `loadAutoSave`, `readMatchLog` | Handled when user attempts to load a non-existent save file or match log. |
 | 11 | Built-in: `ClassNotFoundException` | `GameLoader` | `src/chess/io/GameLoader.java` | `loadGame` | Handled during deserialization when encountering unknown classes. |
 | 11 | Built-in: `InputMismatchException` | `GameController` | `src/chess/engine/GameController.java` | `makeMoveFromAlgebraic` | Handled during `Scanner` token parsing for manual algebraic move commands. |
 | 11 | Built-in: `IllegalArgumentException` | `Piece`, `Square`, `CheckDetector` | Multiple | Parameter validation | Validates non-null constructor arguments and valid game colors. |
@@ -139,6 +142,14 @@ The table below maps all 14 required exception handling concepts to the exact cl
 ## Game Features Overview
 
 - **Interactive 8x8 Board**: Click a piece to select, click destination to move. Selected square turns yellow, valid destinations highlighted with green markers, illegal moves flash the target square in red.
+- **Continuous Move-by-Move Dual Auto-Saving**:
+  - **Binary Auto-Save (`autosave_game.ser`)**: Every executed move instantly serializes the current board, move history, captured pieces, and player clocks to disk, preventing data loss on accidental closure.
+  - **Live PGN Match Journal (`match_history.pgn`)**: Every executed move is appended in official tournament-grade Portable Game Notation (PGN) format with metadata tags (Event, Date, Time, Players, Result) and move numbers.
+- **Session Auto-Recovery**:
+  - Automatically prompts to resume previous session if an auto-saved match is detected on startup.
+  - Dedicated **Resume Auto-Save** toolbar button to reload the latest auto-saved match at any time.
+  - Dedicated **Match Log (PGN)** toolbar button opening a scrollable live match journal dialog.
+  - Fault-tolerant auto-save: disk I/O errors are logged via `GameLogger` without breaking the interactive game loop.
 - **Full Chess Rules**:
   - Legal moves for King, Queen, Rook, Bishop, Knight, and Pawn.
   - Check detection with red highlighting on the checked King.
@@ -151,6 +162,6 @@ The table below maps all 14 required exception handling concepts to the exact cl
 - **Captured Pieces**: Real-time display of captured pieces with Unicode symbols.
 - **Clocks / Timers**: Configurable countdown clock per player with automatic flag-fall detection.
 - **Manual Move Input**: Text box for typing moves (e.g. `e2 e4` or `e7 e8 Q`) to test algebraic parsing exceptions.
-- **Game Persistence**: Save and Load games to `.ser` files via Java Object Serialization.
-- **Undo Move**: Reverts board, captured pieces, turn, and clock to previous turn state.
+- **Game Persistence**: Manual Save and Load games to `.ser` files via Java Object Serialization.
+- **Undo Move**: Reverts board, captured pieces, turn, and clock to previous turn state, with auto-save synchronization.
 
